@@ -2,11 +2,12 @@
 import MealItem from './MealItem'
 import { useHttp } from '../hook/useHttp'
 import Error from './Error';
+import { BASE_URL } from './helper';
 
 const config = {};
 
 export default function Product() {
-    const { isLoading, error, data: meals } = useHttp("http://localhost:3000/meals", config, []);
+    const { isLoading, error, data: meals } = useHttp(`${BASE_URL}/meals`, config, []);
     
     if(error){
         return <Error title="Failed to fech meals" message={error} />

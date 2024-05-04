@@ -6,6 +6,7 @@ import Input from './Input'
 import { ModalContext } from '../store/modal-context'
 import { useHttp } from '../hook/useHttp'
 import Error from './Error'
+import { BASE_URL } from './helper'
 
 const requestConfig = {
     method: "POST",
@@ -18,7 +19,7 @@ const requestConfig = {
 export default function Checkout() {
     const { items,clearCart } = useContext(CartContext);
     const { modalName, closeModal } = useContext(ModalContext);
-    const { isLoading, error, data, sendRequest, clearData } = useHttp("http://localhost:3000/orders", requestConfig);
+    const { isLoading, error, data, sendRequest, clearData } = useHttp(`${BASE_URL}/orders`, requestConfig);
 
     function handleClose() {
         closeModal();

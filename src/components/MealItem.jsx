@@ -1,6 +1,7 @@
 import React, { useContext } from 'react'
 import { CartContext } from '../store/cart-context';
 import { rupeeCurrency } from '../util/currency';
+import { BASE_URL } from './helper';
 
 export default function MealItem({ meal }) {
     const { addItem } = useContext(CartContext);
@@ -14,7 +15,7 @@ export default function MealItem({ meal }) {
     return (
         <div className='meal-item'>
             <article>
-                <img src={`http://localhost:3000/${meal.image}`} />
+                <img src={`${BASE_URL}/${meal.image}`} />
                 <div>
                     <h3>{meal.name}</h3>
                     <p className='meal-item-price'>₹{rupee}</p>
