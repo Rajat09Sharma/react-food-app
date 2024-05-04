@@ -286,5 +286,8 @@ footer{
   h1{
     font-size: 1rem;
   }
+  #meals{
+    width: 100%;
+  }
   
 }
